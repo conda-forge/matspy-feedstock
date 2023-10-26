@@ -1,5 +1,5 @@
 {% set name = "matspy" %}
-{% set version = "0.7" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matspy-{{ version }}.tar.gz
-  sha256: da4a1b80eda1c56b72eacc390887fa5cc155af882121567f2d059c6a56bec0d4
+  sha256: 4c9abda5c57c4e35fca9aa6d436995c0ecfdc001b28a45f746f408e9acf6b9e8
 
 build:
   noarch: python
