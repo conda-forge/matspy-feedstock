@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matspy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matspy-{{ version }}.tar.gz
   sha256: 4c9abda5c57c4e35fca9aa6d436995c0ecfdc001b28a45f746f408e9acf6b9e8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy
     - matplotlib-base
 
@@ -35,6 +35,7 @@ test:
     - scipy
     - python-graphblas
     - sparse
+    - python {{ python_min }}
   source_files:
     - tests/
 
